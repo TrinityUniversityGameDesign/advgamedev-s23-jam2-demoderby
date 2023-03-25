@@ -13,7 +13,7 @@ public class NavMeshTest : MonoBehaviour
     [SerializeField]
     private Transform target;
 
-    public float distThreshold = 2.1f;
+    public float distThreshold = 2f;
 
     [SerializeField]
     private int currentIndex = 0;
