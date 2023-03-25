@@ -23,6 +23,7 @@ public class NavMeshTest : MonoBehaviour
 
     void Start()
     {
+        currentIndex = Random.Range(0, allTargets.Count - 1);
         agent = GetComponent<NavMeshAgent>();
         target = allTargets[currentIndex];
     }
@@ -37,7 +38,8 @@ public class NavMeshTest : MonoBehaviour
         dist = Vector3.Distance(transform.position, target.position);
 
         if(dist <= distThreshold){
-            currentIndex = (currentIndex + 1) % (allTargets.Count);
+            //currentIndex = (currentIndex + 1) % (allTargets.Count);
+            currentIndex = Random.Range(0, allTargets.Count - 1);
             target = allTargets[currentIndex];
         }
     }
