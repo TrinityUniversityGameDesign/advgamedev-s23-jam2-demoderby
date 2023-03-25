@@ -32,9 +32,8 @@ public class SelectCar : MonoBehaviour
 
     public void startDerby()
     {
-        selectedCar.AddComponent<DerbyManager>();
         DontDestroyOnLoad(selectedCar);
         Debug.Log("Loading Derby Scene");
-        //SceneManager.LoadScene("placeholder");
+        selectedCar.AddComponent<DerbyManager>();
     }
 }

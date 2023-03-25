@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarSelection.unity
     guid: a1198eeb3d75d9d4790aa12a27159a2f
+  - enabled: 1
+    path: Assets/Scenes/DerbyScene.unity
+    guid: 9530f3e6bec208e429a51237f066ca53
   m_configObjects: {}
