@@ -5,21 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class DerbyManager : MonoBehaviour
 {
-    private Vector3 startPosition = new Vector3(-28.4f, 40.9f, 11.5f);
+    public GameObject player;
+    public Camera mainCam;
+
+    private Vector3 startPosition = new Vector3(-28.4f, 42f, 11.5f);
+
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("DerbyScene");
+        player = GameObject.Find("Player");
+        player.tag = "Player";
+        player.AddComponent<Rigidbody>();
+        player.AddComponent<CarMovement>();
+        player.transform.position = startPosition;
+        mainCam.transform.parent = player.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(this);
-    }
-
-    public void GlobalStartDerby()
-    {
-        this.transform.position = startPosition;
     }
 }

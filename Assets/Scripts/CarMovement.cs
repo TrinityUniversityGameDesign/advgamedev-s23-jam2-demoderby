@@ -10,22 +10,17 @@ public class CarMovement : MonoBehaviour
     private Vector3 forwardForce;
     private Vector3 turnForce;
 
-    public LayerMask groundMask;
     private Rigidbody rb;
-    private Transform groundCheck;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        groundCheck = transform.Find("GroundCheck");
     }
 
-    private float currVel;
     // Update is called once per frame
     void Update()
     {
-        bool grounded = Physics.CheckSphere(groundCheck.position, 0.15f, groundMask);
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
 
@@ -39,5 +34,10 @@ public class CarMovement : MonoBehaviour
 
         Vector3 moveForce = transform.forward * vert;
         rb.AddForce(speed * Time.deltaTime * moveForce);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
