@@ -37,7 +37,7 @@ public class CarMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         }
     }
 }
