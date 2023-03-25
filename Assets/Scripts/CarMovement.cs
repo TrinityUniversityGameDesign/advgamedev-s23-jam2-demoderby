@@ -31,6 +31,7 @@ public class CarMovement : MonoBehaviour
 
         Vector3 inputDirection = new Vector3(horiz, 0f, vert);
         //Debug.Log(inputDirection);
+        //Debug.Log(rb.velocity.magnitude);
         if (Mathf.Abs(horiz) > 0.1f)
         {
             transform.Rotate(new Vector3(0f, horiz, 0f));
