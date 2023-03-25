@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class NonPlayableCar : MonoBehaviour
 {
-    [SerializeField]
-    private int health = 3;
+    public int health = 3;
 
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -17,9 +16,9 @@ public class NonPlayableCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0){
-            destruction();
-        }
+        // if(health <= 0){
+        //     destruction();
+        // }
     }
 
     void OnCollisionEnter(Collision target){
@@ -48,7 +47,7 @@ public class NonPlayableCar : MonoBehaviour
         health -= dmg;
     }
 
-    private void destruction(){
+    public void destruction(){
         GetComponent<NavMeshTest>().enabled = false;
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         rb.AddForce(0,3,0);

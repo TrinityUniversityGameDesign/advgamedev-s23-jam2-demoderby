@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DerbyScene.unity
     guid: 9530f3e6bec208e429a51237f066ca53
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 6b4f0da2ae38d33438798a1c3ea93d20
   m_configObjects: {}
